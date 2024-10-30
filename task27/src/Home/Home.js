@@ -2,17 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Container, Form, Button, ListGroup } from 'react-bootstrap';
 
 function Home(){
-  const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-
-  useEffect(() => {
+  const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem('todos');
-    console.log("Saved Todos:", savedTodos); 
-    setTodos(savedTodos ? JSON.parse(savedTodos) : []);
-  }, []);
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+  const [inputValue, setInputValue] = useState('');
   
   useEffect(() => {
-    console.log("Saving Todos:", todos);
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 

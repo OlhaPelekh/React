@@ -6,13 +6,11 @@ import  Home  from './Home/Home.js';
 import  Contacts  from './Contacts/Contacts.js';
 import  About  from './About/About.js';
 import  NotFound  from './NotFound/NotFound.js';
-import ThemeToggle from './ThemeToggle.js';
 
 function App() {
   return (
     <BrowserRouter>
       <Header/>
-      <ThemeToggle />
       <Routes>
       <Route path="/"  element={<Home/>} />
        <Route path="/contacts" element={<Contacts/>} />

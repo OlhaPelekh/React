@@ -1,5 +1,6 @@
 import {Container,Nav,Navbar} from 'react-bootstrap';
 import { Link} from 'react-router-dom';
+import ThemeToggle from '../ThemeToggle.js';
 
 function Header() {
   return (
@@ -10,6 +11,7 @@ function Header() {
             <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
           </Nav>
+          <ThemeToggle />
         </Container>
       </Navbar>
   );
